@@ -12,8 +12,9 @@
         <link name="${prefix}_link">
             <inertial>
                 <origin xyz="0.0 0 0.0" rpy="0 0 0" />
-                <mass value="0.002" />
-                <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001" />
+                <!-- The GY-87 mass is in base_link -->
+                <mass value="0.00001" />
+                <inertia ixx="1e-10" ixy="0.0" ixz="0.0" iyy="1e-10" iyz="0.0" izz="1e-10" />
             </inertial>
             <visual>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -35,7 +36,9 @@
         <gazebo reference="${prefix}_link">
             <sensor name="${prefix}_sensor" type="air_pressure">
                 <always_on>true</always_on>
-                <update_rate>50</update_rate>
+                <!-- 25 Hz: the height filter already smooths it (K_H_S = 4 /s),
+                     more only loads micro-ROS (~0.4 % CPU per message/s) -->
+                <update_rate>25</update_rate>
                 <topic>${topic}</topic>
             </sensor>
         </gazebo>

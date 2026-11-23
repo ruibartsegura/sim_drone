@@ -7,10 +7,14 @@
         
         <!-- BASE LINK -->
         <link name="${prefix}base_link">
+            <!-- PCB (8 g, real outline), ESP S2 mini (2.4 g), GY-87 (3 g),
+                 battery 300 mAh under the PCB (6 g), PCB components (3 g) and
+                 the 4 motors without propeller (4 x 1.5 g). Positions from
+                 the KiCad PCB and final_drone.dae. Total drone: 29 g -->
             <inertial>
-                <origin xyz="0 0 0" rpy="0 0 0"/>
-                <mass value="0.05"/>
-                <inertia  ixx="0.017" ixy="0.0"  ixz="0.0"  iyy="0.017"  iyz="0.0"  izz="0.034" />
+                <origin xyz="-0.00036 0.00005 0.00059" rpy="0 0 0"/>
+                <mass value="0.0284"/>
+                <inertia  ixx="1.474e-05" ixy="2.5e-08"  ixz="-1.33e-07"  iyy="1.591e-05"  iyz="0.0"  izz="2.932e-05" />
             </inertial>
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0"/>

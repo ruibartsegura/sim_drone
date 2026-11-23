@@ -11,14 +11,15 @@
         <child link="rotor_${prefix}_link"/>
         <axis xyz="0 0 1" rpy="0 0 0" />
         <limit effort="5000" velocity="10000"/>
-        <dynamics damping="0.05" friction="0.1"/>
+        <dynamics damping="0.0" friction="0.0"/>
     </joint>
 
     <link name="rotor_${prefix}_link">
         <inertial>
             <origin xyz="0 0 0" rpy="0 0 0"/>
-            <mass value="0.005"/>
-            <inertia ixx="0.02975" ixy="0" ixz="0" iyy="0.03087" iyz="0" izz="0.00191"/>
+            <!-- Propeller D 37.5 mm (blade.FCStd), 0.15 g -->
+            <mass value="0.00015"/>
+            <inertia ixx="8.8e-09" ixy="0" ixz="0" iyy="8.8e-09" iyz="0" izz="1.76e-08"/>
         </inertial>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -43,12 +44,12 @@
         <timeConstantUp>0.0125</timeConstantUp>
         <timeConstantDown>0.025</timeConstantDown>
         <maxRotVelocity>4760.0</maxRotVelocity>
-        <motorConstant>3.3e-08</motorConstant>
+        <motorConstant>1.259e-08</motorConstant>
         <momentConstant>0.0016</momentConstant>
         <commandSubTopic>command/motor_speed</commandSubTopic>
         <actuator_number>${prefix}</actuator_number>
-        <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
-        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+        <rotorDragCoefficient>3.7e-07</rotorDragCoefficient>
+        <rollingMomentCoefficient>4.6e-09</rollingMomentCoefficient>
         <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
         <motorType>velocity</motorType>
         </plugin>
@@ -64,14 +65,15 @@
         <child link="rotor_${prefix}_link"/>
         <axis xyz="0 0 1" rpy="0 0 0" />
         <limit effort="5000" velocity="10000"/>
-        <dynamics damping="0.05" friction="0.1"/>
+        <dynamics damping="0.0" friction="0.0"/>
     </joint>
 
     <link name="rotor_${prefix}_link">
         <inertial>
             <origin xyz="0 0 0" rpy="0 0 0"/>
-            <mass value="0.005"/>
-            <inertia ixx="0.02975" ixy="0" ixz="0" iyy="0.03087" iyz="0" izz="0.00191"/>
+            <!-- Propeller D 37.5 mm (blade.FCStd), 0.15 g -->
+            <mass value="0.00015"/>
+            <inertia ixx="8.8e-09" ixy="0" ixz="0" iyy="8.8e-09" iyz="0" izz="1.76e-08"/>
         </inertial>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -96,12 +98,12 @@
         <timeConstantUp>0.0125</timeConstantUp>
         <timeConstantDown>0.025</timeConstantDown>
         <maxRotVelocity>4760.0</maxRotVelocity>
-        <motorConstant>3.3e-08</motorConstant>
+        <motorConstant>1.259e-08</motorConstant>
         <momentConstant>0.0016</momentConstant>
         <commandSubTopic>command/motor_speed</commandSubTopic>
         <actuator_number>${prefix}</actuator_number>
-        <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
-        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+        <rotorDragCoefficient>3.7e-07</rotorDragCoefficient>
+        <rollingMomentCoefficient>4.6e-09</rollingMomentCoefficient>
         <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
         <motorType>velocity</motorType>
         </plugin>

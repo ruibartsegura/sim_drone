@@ -13,8 +13,9 @@
         <link name="${prefix}_link">
             <inertial>
             <origin xyz="0.0 0 0.01" rpy="0 0 0" />
-            <mass value="0.005" />
-            <inertia  ixx="1.391" ixy="0.004"  ixz="0.0"  iyy="6.853"  iyz="0.0"  izz="6.125" />
+            <!-- The GY-87 mass is in base_link -->
+            <mass value="0.00001" />
+            <inertia  ixx="1e-10" ixy="0.0"  ixz="0.0"  iyy="1e-10"  iyz="0.0"  izz="1e-10" />
             </inertial>
             <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -27,7 +28,8 @@
         <gazebo reference="${prefix}_link">
             <sensor name="${prefix}_sensor" type="imu">
                 <always_on>1</always_on>
-                <update_rate>30</update_rate>
+                <!-- ~ the rate of the attitude controller in simulation (15 ms) -->
+                <update_rate>67</update_rate>
                 <topic>${topic}</topic>
             </sensor>
         </gazebo>
